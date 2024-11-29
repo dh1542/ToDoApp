@@ -1,0 +1,46 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="dT48RBKboS_RskunptIv">
+    <mxGraphModel dx="1418" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AJRfSV_cF1USHuq85-sm-7" value="FinanceTracker Server (Backend)" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="264" y="430" width="300" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="AJRfSV_cF1USHuq85-sm-18" value="" style="swimlane;startSize=0;" parent="AJRfSV_cF1USHuq85-sm-7" vertex="1">
+          <mxGeometry x="20" y="50" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="AJRfSV_cF1USHuq85-sm-19" value="Technology" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="AJRfSV_cF1USHuq85-sm-18" vertex="1">
+          <mxGeometry x="25" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AJRfSV_cF1USHuq85-sm-20" value="&lt;ul style=&quot;font-size: 7px;&quot;&gt;&lt;li&gt;Server Framework: spring-boot&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="AJRfSV_cF1USHuq85-sm-18" vertex="1">
+          <mxGeometry x="-39" y="25" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="AJRfSV_cF1USHuq85-sm-8" value="FinanceTracker UI (Frontend)" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="264" y="80" width="300" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="AJRfSV_cF1USHuq85-sm-13" value="" style="swimlane;startSize=0;" parent="AJRfSV_cF1USHuq85-sm-8" vertex="1">
+          <mxGeometry x="20" y="30" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="AJRfSV_cF1USHuq85-sm-14" value="Technology" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="AJRfSV_cF1USHuq85-sm-13" vertex="1">
+          <mxGeometry x="25" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AJRfSV_cF1USHuq85-sm-16" value="&lt;ul style=&quot;font-size: 7px;&quot;&gt;&lt;li&gt;React&lt;/li&gt;&lt;li&gt;Graph Drawing Library&lt;/li&gt;&lt;li&gt;Keycloak (User management)&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="AJRfSV_cF1USHuq85-sm-13" vertex="1">
+          <mxGeometry x="-39" y="20" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="AJRfSV_cF1USHuq85-sm-17" value="FinanceTracker DB" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="810" width="300" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="AJRfSV_cF1USHuq85-sm-22" value="" style="swimlane;startSize=0;" parent="AJRfSV_cF1USHuq85-sm-17" vertex="1">
+          <mxGeometry x="20" y="50" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="AJRfSV_cF1USHuq85-sm-23" value="Technology" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="AJRfSV_cF1USHuq85-sm-22" vertex="1">
+          <mxGeometry x="25" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AJRfSV_cF1USHuq85-sm-24" value="&lt;ul style=&quot;font-size: 7px;&quot;&gt;&lt;li&gt;PostgreSQL&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="AJRfSV_cF1USHuq85-sm-22" vertex="1">
+          <mxGeometry x="-30" y="20" width="100" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
