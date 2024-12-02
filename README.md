@@ -1,10 +1,10 @@
-# FinanceTracker
-A simple finance tracker application that can be used to track your expenses and incomes.
+# TO-DO App
+A simple to-do app to practice spring boot
 
 ## Technologies
 - PostgreSQL
 - Spring Boot
 - React JS
 
-Currently on hold.
+
 
