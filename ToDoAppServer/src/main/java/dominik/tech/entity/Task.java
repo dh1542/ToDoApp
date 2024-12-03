@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 public class Task {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "task_id")
     private Long id;
 
     @Column(name = "name", nullable = false, length = 255)
