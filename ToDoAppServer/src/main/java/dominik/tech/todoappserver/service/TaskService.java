@@ -18,11 +18,13 @@ public class TaskService {
      * @return
      */
     public Task createTask(String name, String description) {
-        System.out.println("Creating task: " + name);
+
         Task task = new Task();
         task.setName(name);
         task.setDescription(description);
         task.setDone(false);
+
+        saveTaskToDB(task);
         return task;
     }
 
@@ -33,7 +35,7 @@ public class TaskService {
      */
     public boolean saveTaskToDB(Task task){
         try{
-            //taskRepository.save(task);
+            taskRepository.save(task);
         } catch(Exception e){
             return false;
         }
