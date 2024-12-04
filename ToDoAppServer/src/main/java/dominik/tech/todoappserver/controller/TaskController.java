@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/api/task")
-public class ToDoAppController {
+public class TaskController {
 
     @Autowired
     TaskService taskService = new TaskService();
