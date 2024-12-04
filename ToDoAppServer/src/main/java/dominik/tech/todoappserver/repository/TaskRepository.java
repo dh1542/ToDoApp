@@ -7,7 +7,7 @@ import dominik.tech.todoappserver.entity.Task;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    saveTask(Ta)
+
 
 
 
