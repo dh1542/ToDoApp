@@ -28,9 +28,15 @@ public class TaskService {
         return task;
     }
 
+    public Task getTask(Long id) {
+            return taskRepository.findById(id).get();
+    }
+
     public void deleteTask(Long id){
         taskRepository.deleteById(id);
     }
+
+
 
     /**
      * Save task to database

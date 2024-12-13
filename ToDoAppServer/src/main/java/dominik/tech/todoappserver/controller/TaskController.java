@@ -38,6 +38,17 @@ public class TaskController {
         }
     }
 
+    @GetMapping("/read")
+    @ResponseBody
+    public ResponseEntity<String> readTask(@RequestHeader("id") Long id) {
+        try{
+            Task task = taskService.getTask(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Task with id: " + id + " has name: " + task.getName() + " and description: " + task.getDescription());
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to read task");
+        }
+    }
+
 
 
 
