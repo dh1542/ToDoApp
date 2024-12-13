@@ -28,6 +28,10 @@ public class TaskService {
         return task;
     }
 
+    public void deleteTask(Long id){
+        taskRepository.deleteById(id);
+    }
+
     /**
      * Save task to database
      * @param task

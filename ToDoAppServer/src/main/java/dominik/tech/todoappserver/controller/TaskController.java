@@ -15,8 +15,7 @@ public class TaskController {
     @Autowired
     TaskService taskService = new TaskService();
 
-
-    @PostMapping("/addTask")
+    @PostMapping("/create")
     @ResponseBody
     public ResponseEntity<String> addTask(@RequestHeader("name") String name, @RequestHeader ("description") String description) {
         try{
@@ -27,5 +26,22 @@ public class TaskController {
         }
 
     }
+
+    @DeleteMapping("/delete")
+    @ResponseBody
+    public ResponseEntity<String> deleteTask(@RequestHeader("id") Long id) {
+        try{
+            taskService.deleteTask(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Deleted task with id: " + id);
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to delete task");
+        }
+    }
+
+
+
+
+
+
 
 }
