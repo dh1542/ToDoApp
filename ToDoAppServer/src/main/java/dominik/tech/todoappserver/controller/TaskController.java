@@ -49,6 +49,21 @@ public class TaskController {
         }
     }
 
+    @PutMapping("/update")
+    @ResponseBody
+    public ResponseEntity<String> updateTask(@RequestHeader("id") Long id, @RequestHeader("name") String name, @RequestHeader("description") String description, @RequestHeader("done") boolean done) {
+        try{
+            Task task = taskService.getTask(id);
+            task.setName(name);
+            task.setDescription(description);
+            task.setDone(done);
+            taskService.saveTaskToDB(task);
+            return ResponseEntity.status(HttpStatus.OK).body("Updated task with id: " + id);
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to update task");
+        }
+    }
+
 
 
 
