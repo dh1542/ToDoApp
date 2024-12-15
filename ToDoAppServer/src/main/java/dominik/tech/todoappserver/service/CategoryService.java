@@ -20,6 +20,14 @@ public class CategoryService {
         return category;
     }
 
+    public void deleteCategory(Long id){
+        categoryRepository.deleteById(id);
+    }
+
+    public Category getCategory(Long id){
+        return categoryRepository.findById(id).get();
+    }
+
     public boolean saveCategoryToDB(Category category){
         try{
             categoryRepository.save(category);

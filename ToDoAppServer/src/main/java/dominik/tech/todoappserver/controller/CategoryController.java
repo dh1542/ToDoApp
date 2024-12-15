@@ -2,6 +2,8 @@ package dominik.tech.todoappserver.controller;
 
 
 import dominik.tech.todoappserver.entity.Category;
+import dominik.tech.todoappserver.entity.Task;
+import dominik.tech.todoappserver.repository.CategoryRepository;
 import dominik.tech.todoappserver.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +17,8 @@ public class CategoryController {
 
     @Autowired
     CategoryService categoryService = new CategoryService();
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     @PostMapping("/create")
     @ResponseBody
@@ -32,17 +36,39 @@ public class CategoryController {
     }
 
     @DeleteMapping("/delete")
-    public void deleteCategory() {
-        // Delete a category
+    public ResponseEntity<String> deleteCategory(@RequestHeader("id") Long id) {
+        try{
+            categoryService.deleteCategory(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Deleted category with id: " + id);
+        }
+        catch(Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to delete category");
+        }
     }
 
-    @PostMapping("/update")
-    public void updateCategory() {
-        // Update a category
+    @PutMapping("/update")
+    @ResponseBody
+    public ResponseEntity<String> updateTask(@RequestHeader("id") Long id, @RequestHeader("name") String name, @RequestHeader("description") String description, @RequestHeader("color") String color) {
+        try{
+            Category task = categoryService.getCategory(id);
+            task.setName(name);
+            task.setDescription(description);
+            task.setColor(color);
+            categoryService.saveCategoryToDB(task);
+            return ResponseEntity.status(HttpStatus.OK).body("Updated category with id: " + id);
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to update category");
+        }
     }
 
-    @PostMapping("/read")
-    public void readCategory() {
-        // Read a category
+    @GetMapping("/read")
+    @ResponseBody
+    public ResponseEntity<String> readCategory(@RequestHeader("id") Long id) {
+        try{
+            Category task = categoryService.getCategory(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Task with id: " + id + " has name: " + task.getName() + " and description: " + task.getDescription());
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to read category");
+        }
     }
 }
