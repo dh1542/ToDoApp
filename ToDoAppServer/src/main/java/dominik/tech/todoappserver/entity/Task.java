@@ -1,5 +1,6 @@
 package dominik.tech.todoappserver.entity;
 
+import dominik.tech.todoappserver.controller.CategoryController;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,9 +18,12 @@ public class Task {
     @Column(name = "description", nullable = false)
     private String description;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = true, referencedColumnName = "category_id")
+    private Category category;
+
     @Column(name = "done", nullable = false)
     private boolean done;
-
 
     public Long getId() {
         return id;
@@ -39,6 +43,14 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public boolean isDone() {

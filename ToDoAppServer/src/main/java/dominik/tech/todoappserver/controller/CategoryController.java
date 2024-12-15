@@ -1,28 +1,36 @@
 package dominik.tech.todoappserver.controller;
 
 
+import dominik.tech.todoappserver.entity.Category;
+import dominik.tech.todoappserver.service.CategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/api/category")
 public class CategoryController {
 
+    @Autowired
+    CategoryService categoryService = new CategoryService();
+
     @PostMapping("/create")
     @ResponseBody
-    public void createCategory(@RequestHeader("name") String name, @RequestHeader("description") String description, @RequestHeader("color") String color) {
+    public ResponseEntity<String> createCategory(@RequestHeader("name") String name, @RequestHeader("description") String description, @RequestHeader("color") String color) {
         try{
-
+            Category category = new Category();
+            category.setName(name);
+            category.setDescription(description);
+            category.setColor(color);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Created category with id: " + category.getId());
         } catch(Exception e){
-            // Handle exception
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to create category");
         }
-
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping("/delete")
     public void deleteCategory() {
         // Delete a category
     }

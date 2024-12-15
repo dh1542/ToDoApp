@@ -24,7 +24,6 @@ public class TaskController {
         } catch(Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to create task");
         }
-
     }
 
     @DeleteMapping("/delete")
