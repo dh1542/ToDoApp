@@ -1,8 +1,6 @@
 package dominik.tech.todoappserver.controller;
 
-
 import dominik.tech.todoappserver.entity.Category;
-import dominik.tech.todoappserver.entity.Task;
 import dominik.tech.todoappserver.repository.CategoryRepository;
 import dominik.tech.todoappserver.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +15,7 @@ public class CategoryController {
 
     @Autowired
     CategoryService categoryService = new CategoryService();
+
     @Autowired
     private CategoryRepository categoryRepository;
 
