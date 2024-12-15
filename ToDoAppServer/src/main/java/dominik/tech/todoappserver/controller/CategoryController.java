@@ -24,6 +24,7 @@ public class CategoryController {
             category.setName(name);
             category.setDescription(description);
             category.setColor(color);
+            categoryService.saveCategoryToDB(category);
             return ResponseEntity.status(HttpStatus.CREATED).body("Created category with id: " + category.getId());
         } catch(Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to create category");
