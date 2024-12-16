@@ -81,4 +81,6 @@ async function createTask(): Promise<string> {
 }
 </script>
 
-<style></style>
+<style scoped>
+
+</style>

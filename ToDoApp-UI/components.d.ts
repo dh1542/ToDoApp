@@ -7,10 +7,12 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    CreateTaskButton: typeof import('./src/components/CreateTaskButton.vue')['default']
+    CategoryCreationForm: typeof import('./src/components/creation/category_creation/CategoryCreationForm.vue')['default']
+    CreateTaskButton: typeof import('./src/components/creation/task_creation/CreateTaskButton.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TaskCreationForm: typeof import('./src/components/TaskCreationForm.vue')['default']
+    TaskCreationForm: typeof import('./src/components/creation/task_creation/TaskCreationForm.vue')['default']
+    TaskList: typeof import('./src/components/task_display/TaskList.vue')['default']
   }
 }
