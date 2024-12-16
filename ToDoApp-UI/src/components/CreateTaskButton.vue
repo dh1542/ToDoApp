@@ -1,19 +1,29 @@
 <template>
-  <v-btn
-    color="primary"
-    dark
-    fab
-    fixed
-    bottom
-    right
-    @click="() => createTask()"
+  <v-tooltip
+    location="start"
+    :disabled="isTaskCreateable()"
+    text="A Task name is required"
   >
-    <template v-slot:prepend>
-      <v-icon color="#ffffff" icon="mdi-plus" size="large"></v-icon>
+    <template v-slot:activator="{ props }">
+      <div v-bind="props" class="d-inline-block">
+        <v-btn
+          color="primary"
+          dark
+          fab
+          fixed
+          bottom
+          right
+          :disabled="!isTaskCreateable()"
+          @click="() => createTask()"
+        >
+          <template v-slot:prepend>
+            <v-icon color="#ffffff" icon="mdi-plus" size="large"></v-icon>
+          </template>
+          Add Task</v-btn
+        >
+      </div>
     </template>
-
-    Add Task</v-btn
-  >
+  </v-tooltip>
 </template>
 
 <script setup lang="ts">
@@ -32,6 +42,10 @@ const props = defineProps({
     required: true,
   },
 });
+
+function isTaskCreateable(): boolean {
+  return props.taskName.length > 0;
+}
 
 async function createTask(): Promise<string> {
   console.log("Task Name: ", props.taskName);
