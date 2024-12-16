@@ -33,11 +33,37 @@ const props = defineProps({
   },
 });
 
-function createTask() {
+async function createTask(): Promise<string> {
   console.log("Task Name: ", props.taskName);
   console.log("Task Description: ", props.taskDescription);
 
-  // TODO: Call rest api and create task
+  const headers: Headers = new Headers();
+
+  headers.set("Content-Type", "application/json");
+  headers.set("name", props.taskName);
+  headers.set("description", props.taskDescription);
+
+  const request: RequestInfo = new Request(serverUrl, {
+    method: "POST",
+    headers: headers,
+  });
+
+  return fetch(request)
+    .then((response: Response) => {
+      if (response.ok) {
+        return response.text();
+      } else {
+        throw new Error("Failed to create task");
+      }
+    })
+    .then((data: any) => {
+      console.log(data);
+      return "Task created successfully";
+    })
+    .catch((error: Error) => {
+      console.error(error);
+      return "Failed to create task";
+    });
 }
 </script>
 
