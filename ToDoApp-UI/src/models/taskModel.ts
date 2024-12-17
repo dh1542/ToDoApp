@@ -1,10 +1,10 @@
+import type { Task } from "@/types/Task";
 import { reactive } from "vue";
-import { Task } from "@/types/Task";
 import { inject } from "vue";
 
 export default class TaskModel {
   private serverUrl = inject<string>("serverUrl");
-  private allTaskEnpointUrl = "/api/tasks/all";
+  private allTaskEnpointUrl = "/api/task/all";
 
   constructor() {
     this.getAllTasks();

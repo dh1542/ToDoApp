@@ -13,6 +13,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TaskCreationForm: typeof import('./src/components/creation/task_creation/TaskCreationForm.vue')['default']
+    TaskItem: typeof import('./src/components/task_display/TaskItem.vue')['default']
     TaskList: typeof import('./src/components/task_display/TaskList.vue')['default']
   }
 }

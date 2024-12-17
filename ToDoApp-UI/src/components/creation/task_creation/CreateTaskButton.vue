@@ -30,7 +30,7 @@
 import { inject } from "vue";
 import { defineProps } from "vue";
 
-const serverUrl: string = inject<string>("serverUrl");
+const serverUrl: any = inject<string>("serverUrl");
 const createUrl: string = "/api/task/create";
 
 const props = defineProps({
