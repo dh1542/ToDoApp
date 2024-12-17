@@ -2,11 +2,14 @@ package dominik.tech.todoappserver.controller;
 
 import dominik.tech.todoappserver.entity.Task;
 import dominik.tech.todoappserver.service.TaskService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @CrossOrigin(origins = "http://localhost:3000")
@@ -61,6 +64,16 @@ public class TaskController {
             return ResponseEntity.status(HttpStatus.OK).body("Updated task with id: " + id);
         } catch(Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to update task");
+        }
+    }
+
+    @GetMapping("/all")
+    @ResponseBody
+    public ResponseEntity<List<Task>> getAllTasks() {
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(taskService.getAllTasks());
+        } catch(Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
     }
 
