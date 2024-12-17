@@ -30,7 +30,8 @@
 import { inject } from "vue";
 import { defineProps } from "vue";
 
-const serverUrl: string = inject<string>("serverUrl") + "/api/task/create";
+const serverUrl: string = inject<string>("serverUrl");
+const createUrl: string = "/api/task/create";
 
 const props = defineProps({
   taskName: {
@@ -57,7 +58,7 @@ async function createTask(): Promise<string> {
   headers.set("name", props.taskName);
   headers.set("description", props.taskDescription);
 
-  const request: RequestInfo = new Request(serverUrl, {
+  const request: RequestInfo = new Request(serverUrl + createUrl, {
     method: "POST",
     headers: headers,
   });
