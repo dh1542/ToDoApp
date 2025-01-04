@@ -36,6 +36,7 @@ const taskDescription = ref("");
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: #b7bccc;
 }
 
 #task-creation-card {

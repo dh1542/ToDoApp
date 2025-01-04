@@ -1,25 +1,40 @@
 <template>
-<v-list-item> 
-    <v-checkbox>
-
-
-    </v-checkbox>
-<v-list-item-content>
-
-    <v-list-item-title>
-        {{props.task.name}}
-    </v-list-item-title>
-</v-list-item-content>
-
-
-</v-list-item>
-
-
+  <div id="item-box">
+    <div id="task-name">{{ props.taskName }}</div>
+    <div>{{ props.taskDescription }}</div>
+    <div>{{ props.taskDone }}</div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import Task from '@/models/taskModel';
-
-const props = defineProps<{ task: Task }>();
-
+const props = defineProps({
+  taskName: {
+    type: String,
+    required: true,
+  },
+  taskDescription: {
+    type: String,
+    required: true,
+  },
+  taskDone: {
+    type: Boolean,
+    required: true,
+  },
+});
 </script>
+<style scoped>
+#item-box {
+  background-color: #5e8a5c;
+  height: 60px;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+#task-name {
+  font-size: 1.5rem;
+}
+</style>
